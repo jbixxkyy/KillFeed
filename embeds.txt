@@ -1,0 +1,19 @@
+const url = "https://discord.gg/jqUrSXDHgw";  // Your link
+const attachment = './images/crown.png';  // Your image for the embed thumbnail
+const embed = new MessageEmbed()
+    .setColor('#FF0000')  // A vibrant red color for visibility
+    .setTitle('🚨 **Killfeed Notification** 🚨')  // Title with bold and emoji for emphasis
+    .setThumbnail('attachment://crown.png')  // Thumbnail with the crown image
+    .setDescription(`${f0} **${f1}** Killed **${f2}** ${f3}`)  // Main description with the kill details
+    .addField('🌐 **Location:**', `${linkLoc + Vloc}`, true)  // Field with location, kept as you asked, but in bold
+    .addField('🕒 **Time:**', new Date().toLocaleTimeString(), true)  // Field for the time of the kill
+    .addField('📝 **Stats:**', `Kills: ${f0}\nWeapons: ${f2}`, false)  // Additional stats (example: number of kills, weapons)
+    .setFooter('Killfeed Bot | Powered by DeathmatchTM', 'https://example.com/footer-icon.png')  // Footer text and image (logo)
+    .setTimestamp()  // Adds timestamp automatically
+    .setImage('https://yourimageurl.com')  // Optionally add a large image like a banner or scene image at the bottom
+
+// Send the embed message
+interaction.guild.channels.cache.get(kfChannel1).send({embeds: [embed], files: [attachment]})
+    .catch(function (error) {
+        console.log(error);
+    });
